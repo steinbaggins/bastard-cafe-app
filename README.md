@@ -1,7 +1,7 @@
 [![Expo](https://img.shields.io/badge/Powered%20by-Expo-4630EB.svg)](https://expo.io/) [![Apollo graphql](https://img.shields.io/badge/Powered%20by-Apollo%20GraphQL-f25cc1.svg)](https://www.apollographql.com/) [![React Navigation](https://img.shields.io/badge/Powered%20by-React%20Navigation-6b52ae.svg)](https://reactnavigation.org/)
 # Bastard Cafe App
 
-**_\*This is an unoffical Bastard Café app._**
+**_\*This is an unofficial Bastard Café app._**
 
 Bastard Cafe App is a tool to search the massive boardgame collection of [Bastard Café](https://bastardcafe.dk/).
 Here are some key improvements over the official app:
