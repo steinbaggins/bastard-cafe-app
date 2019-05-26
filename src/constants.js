@@ -2,7 +2,7 @@ import { Dimensions, PixelRatio } from "react-native";
 
 const { height, width } = Dimensions.get("window");
 
-export const SCREEN = {
+export const DIMENSIONS = {
   height,
   width,
   ratio: height / width,

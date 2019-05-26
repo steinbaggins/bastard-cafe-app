@@ -4,14 +4,14 @@ import { StyleSheet, View, TouchableWithoutFeedback, ImageBackground, Text } fro
 import { LinearGradient } from "expo";
 import { Feather } from "@expo/vector-icons";
 import Screen from "../components/Screen";
-import { SCREEN, COLORS, FONTS } from "../constants";
+import { DIMENSIONS, COLORS, FONTS } from "../constants";
 
 const s = StyleSheet.create({
   card: {
     padding: 15,
   },
   gotmStyle: {
-    height: SCREEN.height * 0.55,
+    height: DIMENSIONS.height * 0.55,
     justifyContent: "flex-end",
   },
   rounded: {
