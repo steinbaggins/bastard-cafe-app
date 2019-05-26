@@ -5,6 +5,7 @@ import { Feather } from "@expo/vector-icons";
 import Router from "./src/Router";
 import Cubano from "./assets/cubano-regular.otf";
 import Lato from "./assets/lato-regular.ttf";
+import LatoBold from "./assets/lato-bold.ttf";
 
 useScreens();
 
@@ -17,6 +18,7 @@ export default class App extends Component {
     const cachedFonts = [
       { Cubano },
       { Lato },
+      { LatoBold },
       Feather.font,
     ].map(font => Font.loadAsync(font));
     await Promise.all(cachedFonts);

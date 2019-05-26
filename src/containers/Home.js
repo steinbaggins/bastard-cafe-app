@@ -1,23 +1,92 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { View, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, View, TouchableWithoutFeedback, ImageBackground, Text } from "react-native";
+import { LinearGradient } from "expo";
+import { Feather } from "@expo/vector-icons";
+import Screen from "../components/Screen";
+import { SCREEN, COLORS, FONTS } from "../constants";
+
+const s = StyleSheet.create({
+  card: {
+    padding: 15,
+  },
+  gotmStyle: {
+    height: SCREEN.height * 0.55,
+    justifyContent: "flex-end",
+  },
+  rounded: {
+    borderRadius: 15,
+  },
+  roundedButtom: {
+    borderBottomRightRadius: 15,
+    borderBottomLeftRadius: 15,
+  },
+  header: {
+    fontFamily: FONTS.display,
+    color: "#FFFFFF",
+    fontSize: 40,
+    padding: 20,
+  },
+  label: {
+    fontFamily: FONTS.display,
+    color: "#141718",
+    fontSize: 25,
+    marginBottom: 10,
+  },
+  input: {
+    backgroundColor: COLORS.gray,
+    borderRadius: 15,
+    padding: 15,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  inputText: {
+    fontFamily: FONTS.textBold,
+    color: "gray",
+    fontWeight: "bold",
+    marginLeft: 10,
+  },
+});
 
 const Home = ({ navigation }) => {
   return (
-    <View>
-      <View>
-        <Text>Home</Text>
-        <TouchableOpacity onPress={ () => navigation.navigate("Boardgame") }>
-          <Text>Boardgame</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={ () => navigation.navigate("BoardgameList") }>
-          <Text>BoardgameList</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={ () => navigation.navigate("Search") }>
-          <Text>Search</Text>
-        </TouchableOpacity>
+    <Screen>
+      <TouchableWithoutFeedback onPress={ () => navigation.navigate("Boardgame", { itemId: 5 }) }>
+        <View style={ s.card }>
+          <ImageBackground
+            source={ { uri: "https://cf.geekdo-images.com/original/img/FaL4MRJ_XR25rRbSbRLFxDyRm4M=/0x0/pic4474567.jpg" } }
+            style={ s.gotmStyle }
+            imageStyle={ s.rounded }
+          >
+            <LinearGradient
+              colors={ ["#00000000", "#000000FF"] }
+              style={ s.roundedButtom }
+            >
+              <Text style={ s.header }>
+                Game
+                { "\n" }
+                of the
+                { "\n" }
+                month
+              </Text>
+            </LinearGradient>
+          </ImageBackground>
+        </View>
+      </TouchableWithoutFeedback>
+      <View style={ s.card }>
+        <Text style={ s.label }>
+          Discover
+        </Text>
+        <TouchableWithoutFeedback onPress={ () => navigation.navigate("Search") }>
+          <View style={ s.input }>
+            <Feather name="search" size={ 20 } color="gray" />
+            <Text style={ s.inputText }>
+              Search boardgames by..
+            </Text>
+          </View>
+        </TouchableWithoutFeedback>
       </View>
-    </View>
+    </Screen>
   );
 };
 
