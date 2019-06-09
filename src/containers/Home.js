@@ -50,8 +50,8 @@ const s = StyleSheet.create({
 
 const Home = ({ navigation }) => {
   return (
-    <Screen>
-      <TouchableWithoutFeedback onPress={ () => navigation.navigate("Boardgame", { itemId: 5 }) }>
+    <Screen padding>
+      <TouchableWithoutFeedback onPress={ () => navigation.navigate("Boardgame", { gameId: 5 }) }>
         <View style={ s.card }>
           <ImageBackground
             source={ { uri: "https://cf.geekdo-images.com/original/img/FaL4MRJ_XR25rRbSbRLFxDyRm4M=/0x0/pic4474567.jpg" } }

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { useScreens } from "react-native-screens";
 import { AppLoading, Font } from "expo";
-import { Feather, Ionicons } from "@expo/vector-icons";
+import { Feather, Ionicons, FontAwesome } from "@expo/vector-icons";
 import Router from "./src/Router";
 import Cubano from "./assets/cubano-regular.otf";
 import Lato from "./assets/lato-regular.ttf";
 import LatoBold from "./assets/lato-bold.ttf";
 
-useScreens();
+// useScreens();
 
 export default class App extends Component {
   state = {
@@ -21,6 +21,7 @@ export default class App extends Component {
       { LatoBold },
       Feather.font,
       Ionicons.font,
+      FontAwesome.font,
     ].map(font => Font.loadAsync(font));
     await Promise.all(cachedFonts);
   }

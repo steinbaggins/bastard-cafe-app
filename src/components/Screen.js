@@ -3,9 +3,13 @@ import PropTypes from "prop-types";
 import { View } from "react-native";
 import { Constants } from "expo";
 
-const Screen = ({ children }) => {
+const Screen = ({ children, padding }) => {
+  const styles = {
+    flex: 1,
+    paddingTop: padding ? Constants.statusBarHeight : 0,
+  };
   return (
-    <View style={ { flex: 1, paddingTop: Constants.statusBarHeight } }>
+    <View style={ styles }>
       { children }
     </View>
   );
@@ -13,6 +17,11 @@ const Screen = ({ children }) => {
 
 Screen.propTypes = {
   children: PropTypes.node.isRequired,
+  padding: PropTypes.bool,
+};
+
+Screen.defaultProps = {
+  padding: false,
 };
 
 export default Screen;

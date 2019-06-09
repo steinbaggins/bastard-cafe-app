@@ -88,7 +88,7 @@ export default class Search extends Component {
     const { navigation } = this.props;
     const { players, time, search } = this.state;
     return (
-      <Screen>
+      <Screen padding>
         <View style={ [s.card, s.inputContainer] }>
           <View style={ s.input }>
             <Feather name="search" size={ 20 } color="gray" />
@@ -96,7 +96,7 @@ export default class Search extends Component {
               placeholder="Search boardgames by.."
               placeholderTextColor="gray"
               style={ s.inputText }
-              onChangeText={ text => this.setState({ search: text }) }
+              onChangeText={ text => this.setState({ search: text.length > 0 ? text : null }) }
               clearButtonMode="while-editing"
               autoFocus
             />

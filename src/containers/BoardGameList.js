@@ -1,22 +1,24 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { View, TouchableOpacity, Text } from "react-native";
+import { FlatList } from "react-navigation";
+import Screen from "../components/Screen";
+import TopBar from "../components/TopBar";
+import ListItem from "../components/ListItem";
+import EmptyList from "../components/EmptyList";
 
-const BoardGameList = ({ navigation }) => {
+const BoardGameList = () => {
   return (
-    <View>
-      <View>
-        <Text>BoardGameList</Text>
-        <TouchableOpacity onPress={ () => navigation.goBack() }>
-          <Text>Go back</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    <Screen>
+      <TopBar title="Found 21 games" />
+      <FlatList
+        data={ [] }
+        renderItem={ ({ item }) => <ListItem game={ item } /> }
+        initialNumToRender={ 5 }
+        keyExtractor={ item => `${ item.gameId }` }
+        ListEmptyComponent={ EmptyList }
+        contentContainerStyle={ { flex: 1 } }
+      />
+    </Screen>
   );
-};
-
-BoardGameList.propTypes = {
-  navigation: PropTypes.object.isRequired,
 };
 
 export default BoardGameList;
