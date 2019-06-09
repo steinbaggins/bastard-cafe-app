@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StyleSheet, View, TouchableWithoutFeedback, ImageBackground, Text } from "react-native";
-import { LinearGradient } from "expo";
+import { LinearGradient } from "expo-linear-gradient";
 import { Feather } from "@expo/vector-icons";
 import Screen from "../components/Screen";
 import { DIMENSIONS, COLORS, FONTS } from "../constants";

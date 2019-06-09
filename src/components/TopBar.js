@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import { withNavigation } from "react-navigation";
-import { Constants } from "expo";
+import Constants from "expo-constants";
 import { FontAwesome } from "@expo/vector-icons";
 
 const s = StyleSheet.create({

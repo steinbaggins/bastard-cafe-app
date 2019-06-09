@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { useScreens } from "react-native-screens";
-import { AppLoading, Font } from "expo";
+import { AppLoading } from "expo";
+import * as Font from "expo-font";
 import { Feather, Ionicons, FontAwesome } from "@expo/vector-icons";
 import Router from "./src/Router";
 import Cubano from "./assets/cubano-regular.otf";
 import Lato from "./assets/lato-regular.ttf";
 import LatoBold from "./assets/lato-bold.ttf";
 
-// useScreens();
+useScreens();
 
 export default class App extends Component {
   state = {
