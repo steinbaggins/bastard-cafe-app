@@ -65,7 +65,7 @@ const s = StyleSheet.create({
 const ListItem = ({ navigation, game }) => {
   return (
     <TouchableOpacity
-      onPress={ () => navigation.navigate("Boardgame", { gameId: game.id }) }
+      onPress={ () => navigation.navigate("Boardgame", { gameId: game.gameId }) }
       activeOpacity={ 0.9 }
     >
       <ImageBackground

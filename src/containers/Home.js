@@ -16,6 +16,7 @@ const s = StyleSheet.create({
   },
   rounded: {
     borderRadius: 15,
+    overflow: "hidden",
   },
   roundedButtom: {
     borderBottomRightRadius: 15,
@@ -58,18 +59,20 @@ const Home = ({ navigation }) => {
             style={ s.gotmStyle }
             imageStyle={ s.rounded }
           >
-            <LinearGradient
-              colors={ ["#00000000", "#000000FF"] }
-              style={ s.roundedButtom }
-            >
-              <Text style={ s.header }>
-                Game
-                { "\n" }
-                of the
-                { "\n" }
-                month
-              </Text>
-            </LinearGradient>
+            <View style={ s.rounded }>
+              <LinearGradient
+                colors={ ["#00000000", "#000000FF"] }
+                style={ s.roundedButtom }
+              >
+                <Text style={ s.header }>
+                  Game
+                  { "\n" }
+                  of the
+                  { "\n" }
+                  month
+                </Text>
+              </LinearGradient>
+            </View>
           </ImageBackground>
         </View>
       </TouchableWithoutFeedback>
