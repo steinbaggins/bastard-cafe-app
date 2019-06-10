@@ -19,3 +19,7 @@ export const FONTS = {
   text: "Lato",
   textBold: "LatoBold",
 };
+
+export const URLS = {
+  events: "https://facebook.com/BastardCafe/pages/permalink/?view_type=tab_events",
+};

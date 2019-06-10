@@ -9,7 +9,12 @@ const BoardGame = ({ navigation }) => {
   return (
     <Screen padding>
       <View>
-        <Text>Boardgame</Text>
+        <Text>
+          Boardgame
+        </Text>
+        <Text>
+          { game.name }
+        </Text>
         <TouchableOpacity onPress={ () => navigation.goBack() }>
           <Text>Go back</Text>
         </TouchableOpacity>
