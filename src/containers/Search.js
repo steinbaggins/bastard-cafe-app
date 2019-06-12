@@ -30,7 +30,7 @@ const s = StyleSheet.create({
   },
   input: {
     backgroundColor: COLORS.gray,
-    borderRadius: 15,
+    borderRadius: 5,
     flexDirection: "row",
     alignItems: "center",
     padding: 15,
@@ -50,7 +50,7 @@ const s = StyleSheet.create({
   },
   button: {
     padding: 15,
-    borderRadius: 15,
+    borderRadius: 5,
     backgroundColor: "#000000",
   },
   buttonText: {

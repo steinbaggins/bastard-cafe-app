@@ -55,7 +55,7 @@ const s = StyleSheet.create({
   },
   input: {
     backgroundColor: COLORS.gray,
-    borderRadius: 15,
+    borderRadius: 5,
     padding: 15,
     flexDirection: "row",
     alignItems: "center",
@@ -73,7 +73,7 @@ const Home = ({ navigation }) => {
     <Screen padding>
       <ScrollView>
         <TouchableOpacity
-          onPress={ () => {} }
+          onPress={ () => navigation.navigate("Boardgame", { gameId: 244521 }) }
           activeOpacity={ 0.9 }
         >
           <View style={ s.card }>
