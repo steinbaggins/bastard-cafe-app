@@ -21,7 +21,7 @@ const s = StyleSheet.create({
   },
   title: {
     fontFamily: FONTS.display,
-    marginLeft: 15,
+    marginLeft: 10,
     fontSize: 15,
   },
   filterValue: {
