@@ -12,7 +12,7 @@ const BoardGameList = ({ navigation }) => {
   const data = filters.players === 6 ? [] : MOCK_DATA;
   return (
     <Screen>
-      <TopBar title={ `Found ${ data.length } games` } />
+      <TopBar title={ `Found ${ data.length } games` } filters={ filters } />
       <FlatList
         data={ data }
         renderItem={ ({ item }) => <ListItem game={ item } /> }

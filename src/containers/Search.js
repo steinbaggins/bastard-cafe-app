@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { StyleSheet, View, TouchableOpacity, Text, TextInput } from "react-native";
-import { Feather, Ionicons } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 import Slider from "react-native-slider";
 import Screen from "../components/Screen";
 import { COLORS, FONTS, DIMENSIONS } from "../constants";
+import { formatPlayerValue, formatTimeValue } from "../utils";
 
 const s = StyleSheet.create({
   card: {
@@ -72,18 +73,6 @@ export default class Search extends Component {
     search: null,
   };
 
-  renderPlayerValue(players) {
-    if (!players) return <Ionicons name="md-infinite" size={ 25 } />;
-    if (players < 6) return players;
-    return `+${ players }`;
-  }
-
-  renderTimeValue(time) {
-    if (!time) return <Ionicons name="md-infinite" size={ 25 } />;
-    if (time < 4) return `${ time - 1 } - ${ time }`;
-    return `+${ time - 1 }`;
-  }
-
   render() {
     const { navigation } = this.props;
     const { players, time, search } = this.state;
@@ -121,7 +110,7 @@ export default class Search extends Component {
               trackStyle={ { height: 3 } }
             />
             <Text style={ s.value }>
-              { this.renderPlayerValue(players) }
+              { formatPlayerValue(players) }
             </Text>
           </View>
 
@@ -138,7 +127,7 @@ export default class Search extends Component {
               trackStyle={ { height: 3 } }
             />
             <Text style={ s.value }>
-              { this.renderTimeValue(time) }
+              { formatTimeValue(time) }
             </Text>
           </View>
         </View>
