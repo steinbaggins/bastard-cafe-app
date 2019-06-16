@@ -11,7 +11,7 @@ export const DIMENSIONS = {
 
 export const COLORS = {
   primary: "#EF536D",
-  gray: "#ECEFF8",
+  gray: "#F5F5F5",
 };
 
 export const FONTS = {
@@ -22,4 +22,5 @@ export const FONTS = {
 
 export const URLS = {
   events: "https://facebook.com/BastardCafe/pages/permalink/?view_type=tab_events",
+  bggGame: "https://boardgamegeek.com/boardgame/",
 };

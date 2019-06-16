@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StyleSheet, TouchableOpacity, ImageBackground, View, Text } from "react-native";
-import { WebBrowser } from "expo";
+import * as WebBrowser from "expo-web-browser";
 import { Feather } from "@expo/vector-icons";
 import { DIMENSIONS, FONTS, URLS } from "../constants";
 
