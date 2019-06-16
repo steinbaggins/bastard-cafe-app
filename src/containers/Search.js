@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { StyleSheet, View, TouchableOpacity, Text, TextInput } from "react-native";
 import { Feather } from "@expo/vector-icons";
@@ -62,85 +62,83 @@ const s = StyleSheet.create({
   },
 });
 
-export default class Search extends Component {
-  static propTypes = {
-    navigation: PropTypes.object.isRequired,
-  };
-
-  state = {
+const Search = ({ navigation }) => {
+  const [filters, setFilters] = useState({
     players: 0,
     time: 0,
     search: null,
-  };
+  });
+  const { players, time } = filters;
+  return (
+    <Screen padding>
+      <View style={ [s.card, s.inputContainer] }>
+        <View style={ s.input }>
+          <Feather name="search" size={ 20 } color="gray" />
+          <TextInput
+            placeholder="Search boardgames by.."
+            placeholderTextColor="gray"
+            style={ s.inputText }
+            onChangeText={ text => setFilters({ ...filters, search: text.length > 0 ? text : null }) }
+            clearButtonMode="while-editing"
+            autoFocus
+          />
+        </View>
+        <TouchableOpacity onPress={ () => navigation.goBack() }>
+          <Text style={ s.back }>
+            Cancel
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <View>
+        <View style={ [s.card, s.group] }>
+          <Text style={ s.label }>
+            Players
+          </Text>
+          <Slider
+            onValueChange={ value => setFilters({ ...filters, players: value }) }
+            minimumValue={ 0 }
+            maximumValue={ 6 }
+            step={ 1 }
+            style={ s.slider }
+            trackStyle={ { height: 3 } }
+          />
+          <Text style={ s.value }>
+            { formatPlayerValue(players) }
+          </Text>
+        </View>
 
-  render() {
-    const { navigation } = this.props;
-    const { players, time, search } = this.state;
-    return (
-      <Screen padding>
-        <View style={ [s.card, s.inputContainer] }>
-          <View style={ s.input }>
-            <Feather name="search" size={ 20 } color="gray" />
-            <TextInput
-              placeholder="Search boardgames by.."
-              placeholderTextColor="gray"
-              style={ s.inputText }
-              onChangeText={ text => this.setState({ search: text.length > 0 ? text : null }) }
-              clearButtonMode="while-editing"
-              autoFocus
-            />
-          </View>
-          <TouchableOpacity onPress={ () => navigation.goBack() }>
-            <Text style={ s.back }>
-              Cancel
-            </Text>
-          </TouchableOpacity>
+        <View style={ [s.card, s.group] }>
+          <Text style={ s.label }>
+            Time
+          </Text>
+          <Slider
+            onValueChange={ value => setFilters({ ...filters, time: value }) }
+            minimumValue={ 0 }
+            maximumValue={ 4 }
+            step={ 1 }
+            style={ s.slider }
+            trackStyle={ { height: 3 } }
+          />
+          <Text style={ s.value }>
+            { formatTimeValue(time) }
+          </Text>
         </View>
-        <View>
-          <View style={ [s.card, s.group] }>
-            <Text style={ s.label }>
-              Players
-            </Text>
-            <Slider
-              onValueChange={ value => this.setState({ players: value }) }
-              minimumValue={ 0 }
-              maximumValue={ 6 }
-              step={ 1 }
-              style={ s.slider }
-              trackStyle={ { height: 3 } }
-            />
-            <Text style={ s.value }>
-              { formatPlayerValue(players) }
+      </View>
+      <View style={ s.card }>
+        <TouchableOpacity onPress={ () => navigation.navigate("BoardgameList", { filters }) }>
+          <View style={ s.button }>
+            <Text style={ s.buttonText }>
+              Search
             </Text>
           </View>
+        </TouchableOpacity>
+      </View>
+    </Screen>
+  );
+};
 
-          <View style={ [s.card, s.group] }>
-            <Text style={ s.label }>
-              Time
-            </Text>
-            <Slider
-              onValueChange={ value => this.setState({ time: value }) }
-              minimumValue={ 0 }
-              maximumValue={ 4 }
-              step={ 1 }
-              style={ s.slider }
-              trackStyle={ { height: 3 } }
-            />
-            <Text style={ s.value }>
-              { formatTimeValue(time) }
-            </Text>
-          </View>
-        </View>
-        <View style={ s.card }>
-          <TouchableOpacity onPress={ () => navigation.navigate("BoardgameList", { filters: { time, players, search } }) }>
-            <View style={ s.button }>
-              <Text style={ s.buttonText }>
-                Search
-              </Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-      </Screen>
-    );
-  }
-}
+Search.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
+
+export default Search;
