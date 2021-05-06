@@ -2298,7 +2298,7 @@ expo-app-loader-provider@~5.0.1:
   resolved "https://registry.yarnpkg.com/expo-app-loader-provider/-/expo-app-loader-provider-5.0.1.tgz#56f531e189de8407bdf257d5753ccec43dd253f7"
   integrity sha512-RrbKXYmy980MdSgroY0fWPEFp4qqRGfE2oixPgN52poXJyrLbFeSmV/92IDsEOFv02jtrbbHJ8i3tiIF63czXA==
 
-expo-asset@^5.0.1, expo-asset@~5.0.1:
+expo-asset@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/expo-asset/-/expo-asset-5.0.1.tgz#02445aeb695b8449cb7239e11fc3a8d34e6c86ce"
   integrity sha512-dDu2jgFVd5UdBVfCgiznaib7R8bF3fZ0H3cLEO8q05lXV5NwFc/ftC2BXy0+tvV5u/yEtnRvQFAQQBJVhtbvpQ==
@@ -6000,9 +6000,9 @@ typedarray@^0.0.6:
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
 ua-parser-js@^0.7.18, ua-parser-js@^0.7.19:
-  version "0.7.19"
-  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.19.tgz#94151be4c0a7fb1d001af7022fdaca4642659e4b"
-  integrity sha512-T3PVJ6uz8i0HzPxOF9SWzWAlfN/DavlpQqepn22xgve/5QecC+XMCAtmUNnY7C9StehaV6exjUCI801lOI7QlQ==
+  version "0.7.28"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.28.tgz#8ba04e653f35ce210239c64661685bf9121dec31"
+  integrity sha512-6Gurc1n//gjp9eQNXjD9O3M/sMwVtN5S8Lv9bvOYBfKfDNiIIhqiyi01vMBO45u4zkDE420w/e0se7Vs+sIg+g==
 
 uglify-es@^3.1.9:
   version "3.3.9"
